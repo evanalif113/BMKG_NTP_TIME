@@ -15,7 +15,8 @@ const char* password = "jeris6467";
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Konfigurasi NTP
-const char* ntpServer = "tandawaktu.id";
+const char* ntpServer = "time.bmkg.go.id";
+const char* ntpServer1 = "ntp.bmkg.go.id";
 const long gmtOffset_sec = 25200; // UTC+7 (Jakarta)
 const int daylightOffset_sec = 0;
 
@@ -68,7 +69,7 @@ void setup() {
   display.display();
 
   // Mengatur waktu dari NTP
-  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer, ntpServer1);
 }
 
 void loop() {
